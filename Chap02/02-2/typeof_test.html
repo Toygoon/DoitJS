@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var num = 100;
+        var str = "자바스크립트";
+
+        document.write(typeof num, "<br>");
+        document.write(typeof str, "<br>");
+
+        // 그럼 이거는??
+        var x = num + '0.03';
+        document.write('num + 0.03 = ', typeof x, '<br>');
+        
+        // 이거는 true라면서??
+        document.write(0.03 == '0.03', '<br>');
+        
+        // 그럼 이건 왜 string?
+        var y = '0.03' + 0.03;
+        document.write(typeof y, '<br>')
+    </script>
+</body>
+</html>
