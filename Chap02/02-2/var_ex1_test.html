@@ -15,6 +15,37 @@
         box = 30;
 
         document.write(box);
+        document.write("\n");
+
+        // String
+        var s = "javascript";
+        var num = "100";
+        var tag = '<h1> String </h1>';
+        
+        document.write([s, num, tag]);
+        document.write("<br>");
+
+        // Number
+        var s = 100;
+        var t = Number("500");
+        // 그럼 이것도 되나?
+        t = Number(num);
+        document.write("t : " + t + "<br>");
+        // 그럼 이건 어떻게 될까?
+        t = Number(num + 0.01);
+        document.write("t + 0.01 = " + t + "<br>");
+        // 결과 : concat
+
+        // Boolean
+        var s = true;
+        var t = 10 >= 100;
+        var k = Boolean("Hello");
+        // 위에게 concat이면 이거는 true라고??
+        document.write(Boolean("100" == 100));
+        document.write("<br>");
+        // 그럼 이거는??
+        document.write(Boolean("false" == false));
+        document.write("<br>");
     </script>
 </body>
 
