@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>진영의 지출 내역 점검</title>
+</head>
+
+<body>
+    <div align="center">
+        <h2>분기별 판매량</h2>
+        <table border="1">
+            <tr>
+                <th></th>
+                <td>판매량</td>
+            </tr>
+            <tr>
+                <th>1분기</th>
+                <td><input type="number" id="quart1" value="1200" disabled="disabled" /></td>
+            </tr>
+            <tr>
+                <th>2분기</th>
+                <td><input type="number" id="quart2" value="1300" disabled="disabled" /></td>
+            </tr>
+            <tr>
+                <th>3분기</th>
+                <td><input type="number" id="quart3" value="1000" disabled="disabled" /></td>
+            </tr>
+            <tr>
+                <th>4분기</th>
+                <td><input type="number" id="quart4" /></td>
+            </tr>
+            <tr>
+                <th></th>
+                <td><button onClick="checkResult()">확인</button></td>
+            </tr>
+        </table>
+        <br>
+        <h2><span id="result"></span></h2>
+    </div>
+
+    <script>
+        function checkResult() {
+            var quart = new Array(4), avg = 0;
+
+            quart[0] = Number(document.getElementById("quart1").value);
+            quart[1] = Number(document.getElementById("quart2").value);
+            quart[2] = Number(document.getElementById("quart3").value);
+            quart[3] = Number(document.getElementById("quart4").value);
+
+            if (quart[3] === "") {
+                alert("4분기 값을 입력하세요");
+                return;
+            }
+
+            for (var i = 0; i < 3; i++)
+                avg += quart[i];
+
+            avg /= 3;
+            document.getElementById("result").textContent = quart[3] > avg ? "판매량이 평균 이상입니다." : "판매량이 평균 미달입니다.";
+        }
+    </script>
+</body>
+
+</html>
