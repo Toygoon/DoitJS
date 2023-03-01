@@ -5,16 +5,33 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>구구단</title>
 </head>
 
 <body>
-    <script>
-        var i = 1;
+    <label for="operand-select">출력할 단 : </label>
+    <select name="operands" id="operand-select">
+        <!-- 이건 되나? -->
+        <script>
+            for (var i = 1; i < 10; i++) {
+                document.write("<option value=\"", i, "\">", i, "</option>");
+            }
+        </script>
+    </select>
+    <button type="button" id="go" onClick="makeTables()">확인</button>
 
-        while (i < 10) {
-            document.write("5X", i, "=", i * 5, "<br>");
-            i++;
+    <br />
+    <br />
+    <div id="multi-table">
+
+    </div>
+    <script>
+        function makeTables() {
+            var html = "<table border='1'>", operand = Number(document.getElementById("operand-select").value);
+            for (var i = 1; i < 10; i++) {
+                html += `<tr><th>${operand}X${i}=${operand * i}</th></tr>`;
+            }
+            document.getElementById("multi-table").innerHTML = html;
         }
     </script>
 </body>
