@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var id = "id", pw = "pw",
+            userId = prompt("아이디 입력", ""), userPw = prompt("비밀번호 입력", "");
+
+        if (id == userId) {
+            if (pw == userPw) {
+                document.write(userId, " 님 반갑습니다.");
+            } else {
+                alert("비밀번호가 일치하지 않습니다.");
+                // 무한 루프 걸리라고???
+                // location.reload();
+            }
+        } else {
+            alert("아이디가 일치하지 않습니다.");
+            // 저자 무한루프 진짜 좋아하네
+            // location.reload();
+        }
+    </script>
+</body>
+
+</html>
