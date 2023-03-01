@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var num = 2.1234;
+
+        var maxNum = Math.max(10, 5, 8, 30),
+            minNum = Math.min(10, 5, 8, 30);
+
+        // 그럼 이것도 되나?
+        var arr = [10, 5, 8, 30];
+        // 안 됨 . . .
+        console.log(Math.max(arr), Math.min(arr));
+
+        var roundNum = Math.round(num),
+            floorNum = Math.floor(num),
+            ceilNum = Math.ceil(num),
+            roundNum = Math.random(),
+            piNum = Math.PI;
+
+        document.write(maxNum, "<br>");
+        document.write(minNum, "<br>");
+        document.write(roundNum, "<br>");
+        document.write(floorNum, "<br>");
+        document.write(ceilNum, "<br>");
+        document.write(roundNum, "<br>");
+        document.write(piNum, "<br>");
+    </script>
+</body>
+
+</html>
