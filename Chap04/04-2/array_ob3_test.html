@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var green = ["교대", "방배", "강남"], yellow = ["미금", "정자", "수서"];
+
+        console.log("orig : ", green);
+        green.splice(2, 1, "서초", "역삼");
+        console.log("splice : ", green);
+
+        var data1 = yellow.pop(), data2 = yellow.shift();
+
+        yellow.push(data2);
+        console.log(yellow);
+
+        yellow.push(data1);
+        console.log(yellow);
+    </script>
+</body>
+
+</html>
