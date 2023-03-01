@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>적정 체중 테스트기</title>
+</head>
+
+<body>
+    <div align="center">
+        <table border="1">
+            <tr>
+                <th>이름</th>
+                <td><input type="text" id="name" placeholder="홍길동" /></td>
+            </tr>
+            <tr>
+                <th>키</th>
+                <td><input type="number" id="height" placeholder="170" /></td>
+            </tr>
+            <tr>
+                <th>몸무게</th>
+                <td><input type="number" id="weight" placeholder="75" /></td>
+            </tr>
+            <tr>
+                <th></th>
+                <td><button onClick="calcBMI()">확인</button></td>
+            </tr>
+        </table>
+        <br>
+        <h2><span id="result"></span></h2>
+    </div>
+
+    <script>
+        function calcBMI() {
+            var name = document.getElementById("name").value,
+                height = document.getElementById("height").value,
+                weight = document.getElementById("weight").value,
+                result = document.getElementById("result"),
+                tmp = NaN;
+
+            // 평균 체중 계산
+            tmp = (height - 100) * 0.9;
+
+            // 오차 범위 ±5
+            console.log(weight, tmp - 5);
+            tmp = weight >= tmp - 5 && weight <= tmp + 5 ? name + " 님은 적정 체중입니다." : name + " 님은 적정 체중이 아닙니다. 적정 체중은 " + tmp + " kg 입니다.";
+
+            result.textContent = tmp;
+        }
+    </script>
+</body>
+
+</html>
