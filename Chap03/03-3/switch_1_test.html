@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var site = prompt("구글, 네이버, 다음?", ""), url;
+
+        switch (site) {
+            case "구글":
+                url = "https://google.com";
+                break;
+            case "다음":
+                url = "https://daum.net";
+                break;
+            case "네이버":
+                url = "https://naver.com";
+                break;
+            default:
+                url = false;
+                alert("보기 중에 없는 사이트입니다.");
+        }
+
+        if (url) {
+            location.href = url;
+        }
+    </script>
+</body>
+
+</html>
