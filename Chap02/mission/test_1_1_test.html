@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>진영의 지출 내역 점검</title>
+</head>
+
+<body>
+    <div align="center">
+        <table border="1">
+            <tr>
+                <th>교통비</th>
+                <td><input type="number" id="price1" value="3000" /></td>
+            </tr>
+            <tr>
+                <th>식비</th>
+                <td><input type="number" id="price2" value="6000" /></td>
+            </tr>
+            <tr>
+                <th>음료비</th>
+                <td><input type="number" id="price3" value="3000" /></td>
+            </tr>
+            <tr>
+                <th></th>
+                <td><button onClick="checkResult()">확인</button></td>
+            </tr>
+        </table>
+        <br>
+        <h2><span id="result"></span></h2>
+    </div>
+
+    <script>
+        function checkResult() {
+            var price1 = document.getElementById("price1").value,
+                price2 = document.getElementById("price2").value,
+                price3 = document.getElementById("price3").value,
+                result = document.getElementById("result"),
+                total = NaN;
+
+            total = Number(price1) + Number(price2) + Number(price3) - 10000;
+            result.textContent = total > 0 ? Math.abs(total) + " 원 초과" : "돈 관리 잘 했어요!";
+        }
+    </script>
+</body>
+
+</html>
