@@ -10,21 +10,46 @@
 
 <body>
     <script>
-        var addNum = 0, subNum = 1000;
+        var addNum = 0, subNum = 1000, addStatus = false, subStatus = false, auto1 = NaN, auto2 = NaN;
 
-        var auto1 = setInterval(function () {
-            addNum++;
-            console.log('addNum : ' + addNum);
-        }, 3000);
+        function toggleAdd() {
+            if (addStatus) {
+                clearInterval(auto1);
 
-        var auto2 = setInterval(function () {
-            subNum--;
-            console.log('subNum : ' + subNum);
-        }, 3000);
+                addStatus = false;
+
+            } else {
+                auto1 = setInterval(function () {
+                    addNum++;
+                    console.log('addNum : ' + addNum);
+                }, 500);
+
+                addStatus = true;
+            }
+        }
+
+
+        function toggleSub() {
+            if (subStatus) {
+                clearInterval(auto2);
+
+                subStatus = false;
+            } else {
+                auto2 = setInterval(function () {
+                    subNum--;
+                    console.log('subNum : ' + subNum);
+                }, 500);
+
+                subStatus = true;
+            }
+        }
+
+        toggleAdd();
+        toggleSub();
     </script>
 
-    <button onclick="clearInterval(auto1);">증가 정지</button>
-    <button onclick="clearInterval(auto2);">감소 정지</button>
+    <button onclick="toggleAdd();">증가 토글</button>
+    <button onclick="toggleAdd();">감소 토글</button>
 </body>
 
 </html>
