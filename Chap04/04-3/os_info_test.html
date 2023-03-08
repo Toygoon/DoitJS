@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var info = navigator.userAgent.toLowerCase(), os = NaN;
+
+        console.log(info);
+        if (info.indexOf("windows") >= 0) {
+            os = 'Windows';
+        } else if (info.indexOf('macintosh') >= 0) {
+            os = 'macOS';
+        } else if (info.indexOf('iphone') >= 0) {
+            os = 'iPhone';
+        } else if (info.indexOf('android') >= 0) {
+            os = 'Android';
+        }
+
+        document.write(os + '<br>');
+
+        var scr = screen, w = screen.width, h = screen.height;
+        document.write(scr + '<br>' + w + '<br>' + h + '<br>');
+    </script>
+</body>
+
+</html>
