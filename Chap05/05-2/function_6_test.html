@@ -11,22 +11,19 @@
 <body>
     <script>
         var num = 1;
+        const IMAGES = 5;
 
         function gallery(direct) {
             if (direct) {
-                if (num == 6)
-                    return;
-
                 num++;
             } else {
-                if (num == 1)
-                    return;
-
-                num--;
+                if (num != 1)
+                    num--;
             }
 
+
             var imgTag = document.getElementById("photo");
-            imgTag.setAttribute("src", "images/img" + num + ".jpg");
+            imgTag.setAttribute("src", "images/img" + Number(num % IMAGES + 1) + ".jpg");
         }
     </script>
 
