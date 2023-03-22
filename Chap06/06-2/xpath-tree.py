@@ -48,13 +48,15 @@ class BinaryTree:
             is_left (bool): a boolean value indicating whether the node is the left child of its parent
         """
         if root:
-            print(prefix, end='')
-            print('|-- ' if is_left else '`-- ', end='')
+            # print(prefix, end='')
+            # print('|-- ' if is_left else '`-- ', end='')
 
-            print(root.data)
-
+            # print(root.data)
+            label = f"{prefix}|-- " if is_left else f"{prefix}`-- "
+            print(f'{label}{root.data}')
+            
             p = prefix + '   '
-
+            
             self.preorder(root.left, p, True)
             self.preorder(root.right, p, False)
 
