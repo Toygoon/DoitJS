@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.js"></script>
+    <script>
+        $(function () {
+            let base = 14;
+            $(".zoom_btn_zone button").on("click", zoomInOut);
+
+            function zoomInOut() {
+                if ($(this).hasClass("zoom_out_btn")) {
+                    if (base <= 8)
+                        return;
+
+                    base--;
+                } else if ($(this).hasClass("zoom_in_btn")) {
+                    if (base >= 20)
+                        return;
+
+                    base++;
+                } else {
+                    base = 14;
+                }
+
+                $(".font_size").text(base + "px");
+                $("body").css({ fontSize: base + "px" });
+            }
+        });
+    </script>
+</head>
+
+<body>
+    <p class="zoom_btn_zone">
+        <button class="zoom_out_btn">-</button>
+        <button class="zoom_orig_btn">100%</button>
+        <button class="zoom_in_btn">+</button>
+    </p>
+    <p class="font_size">14px</p>
+    <div id="wrap">
+        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's
+        standard
+        dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type
+        specimen
+        book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining
+        essentially
+        unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages,
+        and more
+        recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+    </div>
+</body>
+
+</html>
