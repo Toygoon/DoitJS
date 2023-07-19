@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.js"></script>
+    <script>
+        $(function () {
+            $.ajax({
+                url: "js/dataset.xml",
+                dataType: "xml",
+                success: function (data) {
+                    let $data = $(data).find("record");
+                    if ($data.length > 0) {
+                        let tb = $("<table />");
+                        $.each($data, function (i, o) {
+                            let $id = $(o).find("id").text(), $first_name = $(o).find("first_name").text(),
+                                $last_name = $(o).find("last_name").text(), $email = $(o).find("email").text(),
+                                $gender = $(o).find("gender").text();
+
+                            let row = $("<tr / >").append(
+                                $("<td />").text($id),
+                                $("<td />").text($first_name),
+                                $("<td />").text($last_name),
+                                $("<td />").text($email),
+                                $("<td />").text($gender),
+                            );
+
+                            tb.append(row);
+                        });
+
+                        $(".wrap").append(tb);
+                    }
+                }
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <div class="wrap"></div>
+</body>
+
+</html>
