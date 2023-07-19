@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.js"></script>
+    <script>
+        $(function () {
+            $.ajax({
+                url: "news_test.php",
+                dataType: "xml",
+                success: function (data) {
+                    let $items = $(data).find("items");
+
+                    if ($items.length > 0) {
+                        $items = $items.slice(0, 10);
+                        let $ulTag = $("<ul />");
+                        $.each($items, function (i, o) {
+                            let $title = $(o).find("title").text(), $link = $(o).find("link".text());
+
+                            let $aTag = $("<a />").attr({
+                                "href": $link,
+                                "taget": "_blank"
+                            }).text($title);
+
+                            var $liTag = $("<li />").append($aTag);
+
+                            $ulTag.append($liTag);
+                        });
+                        $(".wrap").append($ulTag);
+                    }
+                }
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <div class="wrap"></div>
+</body>
+
+</html>
