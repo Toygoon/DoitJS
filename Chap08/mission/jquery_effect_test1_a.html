@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.js"></script>
+    <script>
+        $("#btn").click(function () {
+            $("h1").css("opacity", 0);
+        })
+    </script>
+    <style>
+        h1 {
+            opacity: 1;
+            transition: opacity 1s;
+        }
+    </style>
+</head>
+
+<body>
+    <button id="btn">버튼</button>
+    <h1>내용</h1>
+</body>
+
+</html>
