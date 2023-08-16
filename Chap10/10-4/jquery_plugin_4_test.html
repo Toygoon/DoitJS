@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.js"
+            integrity="sha512-aUhL2xOCrpLEuGD5f6tgHbLYEXRpYZ8G5yD+WlFrXrPy2IrWBlu6bih5C9H6qGsgqnU6mgx6KtU8TreHpASprw=="
+            crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <script>
+        $(function () {
+            if ($.cookie("popup") == "none") {
+                $("#notice_wrap").hide();
+            }
+
+            let $expChk = $("#expiresChk");
+            $(".closeBtn").on("click", closePop);
+
+            function closePop() {
+                if ($expChk.is(":checked")) {
+                    $.cookie("popup", "none", {expires: 3, path: "/"});
+                }
+
+                $("#notice_wrap").fadeOut("fast");
+            }
+        })
+    </script>
+
+    <title>Title</title>
+</head>
+<body>
+<div id="notice_wrap">
+    <img src="https://picsum.photos/200/300">
+    <p class="closeWrap">
+        <input type="checkbox" name="expiresChk" id="expiresChk">
+        <label for="expiresChk">3일동안 이 창 열지 않기</label>
+        <button class="closeBtn">닫기</button>
+    </p>
+</div>
+</body>
+</html>
