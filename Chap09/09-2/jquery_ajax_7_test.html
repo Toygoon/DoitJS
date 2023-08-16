@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.js"></script>
+    <script>
+        $(function () {
+            let href = 'http://localhost:5500/Chap09/09-2/member_test.php?callback=myTest'
+            $.ajax({
+                url: href,
+                dataType: "jsonp"
+            }).done(function myTest(data) {
+                if (data.length > 0) {
+                    let $table = $("<table/>");
+                    data.forEach(function (o) {
+                        $id = o.id;
+                        $name = o.name;
+                        $email = o.email;
+
+                        let trTag = $("<tr/>");
+                        trTag.append(
+                            $("<td/>").text($id),
+                            $("<td/>").text($name),
+                            $("<td/>").text($email)
+                        );
+
+                        $table.append(trTag);
+                    });
+
+                    $(".wrap").append($table);
+                }
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <div class="wrap"></div>
+</body>
+
+</html>
