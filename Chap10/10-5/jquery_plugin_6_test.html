@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+    <script>
+        $(function () {
+            $.fn.extend({
+                faq: function () {
+                    let ts = $(this);
+
+                    $.each(ts, function (i, o) {
+                        $("button", o).on("click", tabmenu);
+
+                        function tabmenu() {
+                            if ($(this).parent().next().is(":hidden")) {
+                                $("li>div:visible", o).hide();
+                                $(this).parent().next().show();
+                            } else {
+                                $("li>div:visible", o).hide();
+                            }
+                        }
+                    });
+                }
+            });
+
+            $(".faq").tabmenu();
+        });
+    </script>
+
+    <title>Title</title>
+</head>
+<body>
+<h1>질문 제목1</h1>
+<div class="faq">
+    <ul>
+        <li>
+            <p>
+                <button>Q1. 자주 묻는 질문 내용?</button>
+            </p>
+            <div>
+                <div class="cont">답변 내용1</div>
+            </div>
+        </li>
+        <li>
+            <p>
+                <button>Q2. 자주 묻는 질문 내용?</button>
+            </p>
+            <div>
+                <div class="cont">답변 내용2</div>
+            </div>
+        </li>
+    </ul>
+</div>
+<h1>질문 제목2</h1>
+<div class="faq">
+    <ul>
+        <li>
+            <p>
+                <button>Q1. 자주 묻는 질문 내용?</button>
+            </p>
+            <div>
+                <div class="cont">답변 내용1</div>
+            </div>
+        </li>
+        <li>
+            <p>
+                <button>Q2. 자주 묻는 질문 내용?</button>
+            </p>
+            <div>
+                <div class="cont">답변 내용2</div>
+            </div>
+        </li>
+    </ul>
+</div>
+</body>
+</html>
