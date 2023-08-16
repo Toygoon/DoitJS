@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+    <script>
+        $(function () {
+            $.fn.open = function (type, msg) {
+                let ts = $(this);
+
+                $.each(ts, function (i, o) {
+                    $(o).on(type, function () {
+                        alert(msg);
+                    });
+                });
+            }
+
+            $(".btn1").open("mouseover", "welcome!");
+            $(".btn2").open("click", "hello!");
+        });
+    </script>
+
+    <title>Title</title>
+</head>
+<body>
+<p>
+    <button class="btn1">버튼1</button>
+</p>
+<p>
+    <button class="btn2">버튼2</button>
+</p>
+<p>
+    <button class="btn3">버튼3</button>
+</p>
+</body>
+</html>
