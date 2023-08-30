@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
     <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
@@ -15,20 +16,72 @@
         }
     </style>
 </head>
+
 <body>
-<div id="container">
-    <section id="main-visual" class="rounded">
-    </section>
-    <section id="notice-tab-wrap" class="rounded">
-    </section>
-    <section id="best-book-wrap">
-    </section>
-</div>
+    <div id="container">
+        <section id="main-visual" class="rounded">
+        </section>
+        <section id="notice-tab-wrap" class="rounded">
+        </section>
+        <section id="best-book-wrap">
+        </section>
+    </div>
 
-<div id="footer-wrap">
-    <footer id="footer">
+    <div id="footer-wrap">
+        <footer id="footer">
 
-    </footer>
-</div>
+        </footer>
+    </div>
+
+    <header class="header-inner">
+        <p class="mobile-menu-open">
+            <button>
+                <span class="blind">메뉴 열기</span>
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </p>
+        <div class="mobile-menu-wrap">
+            <div class="mobile-menu-scroll">
+                <nav id="gnb">
+                    <h2 class="blind">메인메뉴</h2>
+                    <ul>
+                        <li class="m1">
+                            <a href="#">ABOUT</a>
+                            <ul>
+                                <li><a href="#">about</a></li>
+                            </ul>
+                        </li>
+                        <li class="m2">
+                            <a href="#">BOOK</a>
+                            <ul>
+                                <li><a href="#">book</a></li>
+                            </ul>
+                        </li>
+                        <li class="m3">
+                            <a href="#">COMMUNITY</a>
+                            <ul>
+                                <li><a href="#">community</a></li>
+                            </ul>
+                        </li>
+                        <li class="m4 no-sub">
+                            <ul>
+                                <li><a href="#">no-sub</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+            <p class="mobile-menu-close">
+                <button>
+                    <span class="blind">메뉴닫기</span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </p>
+        </div>
+    </header>
 </body>
+
 </html>
